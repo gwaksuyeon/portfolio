@@ -1,0 +1,85 @@
+@import 'styles/root.scss';
+
+#signin-wrap {
+  @include flexRow();
+  flex: 1 1 auto;
+  height: 100%;
+
+  .sideWrap {
+    @include flexColumn();
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50%;
+    background: $primary;
+
+    svg {
+      width: 40%;
+      fill: #fff;
+    }
+  }
+
+  .signinWrap {
+    @include flexColumn();
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1 1 50%;
+
+    .backBtn {
+      position: absolute;
+      top: 24px; left: 24px;
+      button {
+        min-width: initial;
+        background: transparent;
+        box-shadow: none;
+        padding: 4px 8px;
+        svg {
+          width: 8px;
+        }
+      }
+    }
+
+    .containWrap {
+      @include flexColumn();
+      align-items: center;
+
+      .title {
+        font-size: 32px;
+        font-weight: $fontWeightImportant;
+      }
+
+      form {
+        @include flexColumn();
+        width: 300px;
+        margin: 40px 0 50px 0;
+
+        .MuiOutlinedInput-root {
+          border-radius: 0;
+        }
+
+        .password {
+          margin: 12px 0 20px 0;
+        }
+
+        button {
+          min-width: initial;
+          height: 40px;
+          background: $primary;
+          border-radius: 0;
+          box-shadow: none;
+          color: #fff;
+          font-size: $fontSizeXLarge;
+          padding: 4px 8px;
+        }
+      }
+
+      .forgotPassword {
+        font-weight: $fontWeightImportant;
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
