@@ -11,5 +11,7 @@ export const Settings = {
   index: `/`,
   mapsin: {
     landing: `/mapsin/${MenuTypes.landing}`,
+    signin: `/mapsin/${MenuTypes.signin}`,
+    signup: `/mapsin/${MenuTypes.signup}`,
   }
 }
