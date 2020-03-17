@@ -1,2 +1,185 @@
+@import 'styles/root.scss';
+
 #landing-wrap {
+  flex: 1 1 auto;
+
+  header {
+    @include flexRow();
+    align-items: center;
+    height: 50px;
+    background: $primary;
+    padding: 0 10px;
+    ._logo {
+      svg {
+        height: 40px;
+      }
+    }
+    ._loginBtn {
+      margin-left: auto;
+      button {
+        min-width: initial;
+        background: transparent;
+        box-shadow: none;
+        color: #fff;
+        padding: 4px 8px;
+      }
+    }
+  }
+
+  main {
+    flex: 1 1 auto;
+
+    section {
+      @include flexColumn();
+      justify-content: center;
+      align-items: center;
+
+      .contentsWrap {
+        @include flexRow();
+        align-items: center;
+      }
+
+      // landing 첫화면
+      &:nth-child(1) {
+        height: 600px;
+        background: $primary;
+        overflow-y: hidden;
+
+        .imgWrap {
+          width: 600px;
+          height: 600px;
+          margin-right: 80px;
+          img {
+            width: 100%;
+            height: 100%;
+            margin-top: 50px;
+          }
+        }
+        .textWrap {
+          p {
+            font-size: 72px;
+            line-height: 80px;
+            font-weight: $fontWeightImportant;
+            color: #fff;
+          }
+          button {
+            width: 100%;
+            background: #fff;
+            border-radius: 0;
+            color: $primary;
+            font-size: $fontSizeXLarge;
+            font-weight: $fontWeightExtra;
+            padding: 4px 8px;
+            margin-top: 24px;
+
+            .MuiButton-label {
+              @include flexRow();
+              justify-content: space-between;
+              svg {
+                width: 18px;
+                fill: $primary;
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+
+      // 맵기 등급 산정 과정
+      &:nth-child(2) {
+        height: 400px;
+
+        .itemWrap {
+          @include flexColumn();
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          margin-left: 100px;
+
+          .numbering {
+            color: $primary;
+            font-size: 16px;
+            font-weight: $fontWeightExtra;
+            margin: 0 auto 5px 0;
+          }
+          svg {
+            width: 72px;
+          }
+          .title {
+            font-weight: $fontWeightImportant;
+            font-size: 16px;
+            margin: 10px 0;
+          }
+          .text {
+            color: $colorLight;
+          }
+        }
+      }
+
+      // 지금 만나보기
+      &:nth-child(3) {
+        height: 400px;
+        background: $secondColor;
+
+        .textWrap {
+          @include flexColumn();
+          margin-right: 80px;
+          
+          p {
+            font-size: 48px;
+            line-height: 52px;
+
+            .bold {
+              font-weight: $fontWeightImportant;
+            }
+          }
+
+          button {
+            min-width: initial;
+            border-radius: 0;
+            background: $primary;
+            box-shadow: none;
+            color: #fff;
+            font-weight: $fontWeightImportant;
+            padding: 4px 8px;
+            margin-top: 24px;
+
+            .MuiButton-label {
+              @include flexRow();
+              justify-content: space-between;
+              svg {
+                width: 16px;
+                fill: #fff;
+                margin-left: auto;
+              }
+            }
+          }
+        }
+
+        .imgWrap {
+          width: 400px;
+          height: 300px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include flexColumn();
+    align-items: center;
+    height: 50px;
+    border-top: 1px solid $borderDefaultColor;
+    margin-top: 100px;
+    padding: 5px 0;
+    ._logo {
+      svg {
+        width: 32px;
+      }
+    }
+  }
 }
