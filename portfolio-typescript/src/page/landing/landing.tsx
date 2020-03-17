@@ -1,6 +1,7 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
 import './landing.scss';
+
+import GoLoginBtnContainer from 'container/landing/GoLoginBtn';
 
 import LogoWhiteIcon from 'component/icons/logoWhite';
 import ArrowRightLightIcon from 'component/icons/arrowRightLight';
@@ -19,9 +20,9 @@ const Landing = () => {
           <LogoWhiteIcon/>
         </div>
         <div className="_loginBtn">
-          <Button variant="contained">
-            Login
-          </Button>
+          <GoLoginBtnContainer 
+            text="Login"
+          />
         </div>
       </header>
 
@@ -37,12 +38,10 @@ const Landing = () => {
                 맵기를<br/>
                 알아보세요<br/>
               </p>
-              <Button
-                variant="contained"
-                endIcon={<ArrowRightLightIcon/>}
-              >
-                지금 알아보기
-              </Button>
+              <GoLoginBtnContainer 
+                text="지금 알아보기"
+                icon={<ArrowRightLightIcon/>}
+              />
             </div>
           </div>
         </section>
@@ -87,12 +86,10 @@ const Landing = () => {
                 <span className="bold">맵신</span>을<br/>
                 만나보세요<br/>
               </p>
-              <Button
-                variant="contained"
-                endIcon={<ArrowRightLightIcon/>}
-              >
-                지금 만나보기
-              </Button>
+              <GoLoginBtnContainer 
+                text="지금 만나보기"
+                icon={<ArrowRightLightIcon/>}
+              />
             </div>
             <div className="imgWrap">
               <img src={LandingImg2} alt="landingImg2"/>
