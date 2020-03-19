@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, FormControl, InputLabel, MenuItem, Select, ThemeProvider, TextField } from '@material-ui/core';
+import { FormControl, InputLabel, MenuItem, Select, ThemeProvider, TextField } from '@material-ui/core';
 import './signup.scss';
 
 import { Settings } from 'settings';
 import { Theme } from 'settings/material';
 
 import LinkToBtnContainer from 'container/signup/LinkToBtn';
+import SelectGenderBtnContainer from 'container/signup/SelectGenderBtn';
 import FormSubmitBtnContainer from 'container/signup/FormSubmitBtn';
 
 import LogoSloganIcon from 'component/icons/logoSlogan'
@@ -53,20 +54,7 @@ const Signup = () => {
               />
 
               <div className="row">
-                <div className="selectGenderWrap">
-                  <div 
-                    className="selectBtn _active"
-                    data-type="female"
-                  >
-                    여자
-                  </div>
-                  <div 
-                    className="selectBtn"
-                    data-type="male"
-                  >
-                    남자
-                  </div>
-                </div>
+                <SelectGenderBtnContainer />
 
                 <FormControl variant="outlined">
                   <InputLabel id="select-age">연령대</InputLabel>
