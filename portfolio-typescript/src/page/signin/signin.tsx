@@ -33,14 +33,14 @@ const Signin = () => {
               <TextField
                 className="id"
                 variant="outlined"
-                label="ID"
+                label="아이디"
                 type="text"
                 size="small"
               />
               <TextField
                 className="password"
                 variant="outlined"
-                label="Password"
+                label="비밀번호"
                 type="password"
                 size="small"
               />
