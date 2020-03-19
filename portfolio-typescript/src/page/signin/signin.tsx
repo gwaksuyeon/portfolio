@@ -36,6 +36,7 @@ const Signin = () => {
                 label="아이디"
                 type="text"
                 size="small"
+                required
               />
               <TextField
                 className="password"
@@ -43,8 +44,12 @@ const Signin = () => {
                 label="비밀번호"
                 type="password"
                 size="small"
+                required
               />
-              <Button variant="contained">
+              <Button 
+                variant="contained"
+                type="submit"
+              >
                 Login
               </Button>
             </ThemeProvider>

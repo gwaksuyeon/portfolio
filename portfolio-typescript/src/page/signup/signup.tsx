@@ -37,6 +37,7 @@ const Signup = () => {
                 label="아이디"
                 type="text"
                 size="small"
+                required
               />
               <TextField
                 className="password"
@@ -44,6 +45,7 @@ const Signup = () => {
                 label="비밀번호"
                 type="password"
                 size="small"
+                required
               />
               <TextField
                 className="passwordCheck"
@@ -51,6 +53,7 @@ const Signup = () => {
                 label="비밀번호 확인"
                 type="password"
                 size="small"
+                required
               />
 
               <div className="row">
@@ -62,6 +65,7 @@ const Signup = () => {
                     labelId="select-age"
                     className="selectAge"
                     label="연령대"
+                    required
                   >
                     <MenuItem value={"tenUnder"}>10대이하</MenuItem>
                     <MenuItem value={"ten"}>10대</MenuItem>
