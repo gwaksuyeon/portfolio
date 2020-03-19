@@ -1,0 +1,129 @@
+@import 'styles/root.scss';
+
+#signup-wrap{
+  @include flexRow();
+  flex: 1 1 auto;
+  height: 100%;
+
+  .sideWrap {
+    @include flexColumn();
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50%;
+    background: $primary;
+
+    svg {
+      width: 40%;
+      fill: #fff;
+    }
+  }
+
+  .signupWrap {
+    @include flexColumn();
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1 1 50%;
+
+    .backBtn {
+      position: absolute;
+      top: 24px; left: 24px;
+      button {
+        min-width: initial;
+        background: transparent;
+        box-shadow: none;
+        padding: 4px 8px;
+        svg {
+          width: 8px;
+        }
+      }
+    }
+
+    .containWrap {
+      @include flexColumn();
+      align-items: center;
+
+      .title {
+        font-size: 32px;
+        font-weight: $fontWeightImportant;
+      }
+
+      form {
+        @include flexColumn();
+        width: 300px;
+        margin: 40px 0 50px 0;
+
+        .MuiFormControl-root {
+          height: 35px;
+          margin-bottom: 12px;
+        }
+
+        .MuiOutlinedInput-root {
+          border-radius: 0;
+        }
+
+        .row {
+          @include flexRow();
+          margin-bottom: 12px;
+
+          .selectGenderWrap {
+            @include flexRow();
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 50%;
+            margin-right: 12px;
+
+            .selectBtn {
+              @include flexRow();
+              justify-content: center;
+              align-items: center;
+              flex: 1 1 50%;
+              height: 100%;
+              border: 1px solid rgba(0, 0, 0, 0.23);
+              cursor: pointer;
+
+              &._active {
+                background: $primary;
+                color: #fff;
+              }
+            }
+
+          }
+
+          // select
+          .MuiFormControl-root {
+            flex: 1 1 50%;
+            margin-bottom: 0;
+
+            .MuiInputLabel-outlined {
+              transform: translate(14px, 10.5px) scale(1);
+              &.MuiInputLabel-shrink {
+                transform: translate(14px, -6px) scale(0.75);
+              }
+            }
+
+            .MuiInputBase-root {
+              height: 100%;
+              .MuiOutlinedInput-input {
+                padding: 10.5px 14px;
+              }
+            }
+          }
+        }
+
+
+        button {
+          min-width: initial;
+          height: 40px;
+          background: $primary;
+          border-radius: 0;
+          box-shadow: none;
+          color: #fff;
+          font-size: $fontSizeXLarge;
+          padding: 4px 8px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
