@@ -1,0 +1,91 @@
+@import 'styles/root.scss';
+
+#survey-wrap {
+  height: 100%;
+
+  header {
+    @include flexRow();
+    align-items: center;
+    height: 50px;
+    background: $primary;
+    padding: 0 10px;
+
+    ._logo {
+      svg {
+        height: 40px;
+      }
+    }
+
+    button {
+      min-width: initial;
+      background: transparent;
+      box-shadow: none;
+      color: #fff;
+      padding: 4px 8px;
+      margin-left: auto;
+    }
+  }
+
+  main {
+    @include flexColumn();
+    position: relative;
+    height: calc(100% - 50px);
+
+    .bg {
+      position: absolute;
+      width: 100%; height: 300px;
+      background-color: $primary;
+      z-index: -1;
+    }
+
+    .contentsWrap {
+      @include flexColumn();
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, .25);
+      margin: 10px;
+      padding: 10px;
+
+      .progressBarWrap {
+        @include flexRow();
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        width: 60%; height: 5px;
+        .currentBar {
+          width: calc(60% / 10);
+          height: 8px;
+          background: $primary;
+          z-index: 2;
+        }
+        .subBar {
+          width: 100%;
+          height: 5px;
+          background: $gray5;
+        }
+      }
+
+      .prevBtn, .nextBtn {
+        position: absolute;
+        top: 50%; transform: translateY(-50%);
+        background: $primary;
+        svg {
+          width: 12px;
+          fill: #fff;
+        }
+      }
+
+      .prevBtn {
+        left: 32px;
+      }
+
+      .nextBtn {
+        right: 32px;
+      }
+    }
+  }
+}
