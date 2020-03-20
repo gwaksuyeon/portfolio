@@ -6,6 +6,7 @@ import 'styles/root.scss';
 import Landing from 'page/landing';
 import Signin from 'page/signin';
 import Signup from 'page/signup';
+import Survey from 'page/survey';
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <Route exact={true} path={Settings.index}  component={Landing}/>
         <Route exact={true} path={Settings.mapsin.signin} component={Signin}/>
         <Route exact={true} path={Settings.mapsin.signup} component={Signup} />
+        <Route exact={true} path={Settings.mapsin.survey} component={Survey} />
       </div>
     )
   }
