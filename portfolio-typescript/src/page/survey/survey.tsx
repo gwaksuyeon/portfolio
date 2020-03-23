@@ -1,11 +1,14 @@
 import React from 'react';
-import { Button, IconButton } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import './survey.scss';
 
+import LogoutBtnContainer from 'container/survey/LogoutBtn';
+import ProgressBarContainer from 'container/survey/ProgressBar';
+import PrevBtnContainer from 'container/survey/PrevBtn';
+import NextBtnContainer from 'container/survey/NextBtn';
+import ListContainer from 'container/survey/List';
+
 import LogoWhiteIcon from 'component/icons/logoWhite';
-import ArrowLeftLightIcon from 'component/icons/arrowLeftLight';
-import ArrowRightLightIcon from 'component/icons/arrowRightLight';
-import ChillFillIcon from 'component/icons/chillFill';
 
 const Survey = () => {
   return (
@@ -14,47 +17,20 @@ const Survey = () => {
         <div className="_logo">
           <LogoWhiteIcon />
         </div>
-        <Button variant="contained">
-          Logout
-        </Button>
+        <LogoutBtnContainer />
       </header>
 
       <main>
         <div className="bg"></div>
         <div className="contentsWrap">
           <div className="progressBarWrap">
-            <div className="currentBar"></div>
-            <div className="subBar"></div>
+            <ProgressBarContainer />
           </div>
 
-            <IconButton className="prevBtn">
-              <ArrowLeftLightIcon />
-            </IconButton>
+            <PrevBtnContainer />
+            <NextBtnContainer />
 
-            <IconButton className="nextBtn">
-              <ArrowRightLightIcon />
-            </IconButton>
-
-          <div className="contents">
-            <div className="textWrap">
-              <p className="manufacturer">삼양</p>
-              <p className="name">불닭볶음면</p>
-
-              <div className="evaluationWrap">
-                <ChillFillIcon />
-                <ChillFillIcon />
-                <ChillFillIcon />
-                <ChillFillIcon />
-                <ChillFillIcon />
-              </div>
-              <Button variant="contained">
-                먹어본적없다
-              </Button>
-            </div>
-            <div className="imgWrap">
-              <img src="#" alt="img"/>
-            </div>
-          </div>
+            <ListContainer />
         </div>
       </main>
     </div>

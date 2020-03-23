@@ -50,26 +50,25 @@
       margin: 10px;
       padding: 10px;
 
+      // 진행바
       .progressBarWrap {
         @include flexRow();
         align-items: center;
         position: absolute;
         top: 30px;
         width: 60%; height: 5px;
+        background: $gray5;
         .currentBar {
-          width: calc(60% / 10);
+          width: calc(100% / 10 * 1);
           height: 8px;
           background: $primary;
           z-index: 2;
-        }
-        .subBar {
-          width: 100%;
-          height: 5px;
-          background: $gray5;
+          transition: .25s;
         }
       }
 
-      .prevBtn, .nextBtn {
+      // 좌우버튼
+      .prevBtn, .nextBtn, .completeBtn {
         position: absolute;
         top: 50%; transform: translateY(-50%);
         background: $primary;
@@ -80,11 +79,58 @@
       }
 
       .prevBtn {
-        left: 32px;
+        left: 60px;
       }
 
-      .nextBtn {
-        right: 32px;
+      .nextBtn, .completeBtn {
+        right: 60px;
+      }
+
+      // 내용
+      .contents {
+        @include flexRow();
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        .textWrap {
+          @include flexColumn();
+          margin-right: 120px;
+
+          .manufacturer {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          .name {
+            font-size: 40px;
+          }
+
+          .evaluationWrap {
+            @include flexRow();
+  
+            svg {
+              width: 40px;
+              margin: 32px 0 20px;
+            }
+          }
+  
+          .notSelectBtn {
+            min-width: initial;
+            background: $primary;
+            color: #fff;
+            box-shadow: none;
+            padding: 4px 8px;
+          }
+        }
+
+        // img
+        .imgWrap {
+          width: 400px;
+          height: 400px;
+
+          img {
+            width: 100%; height: 100%;
+          }
+        }
       }
     }
   }
