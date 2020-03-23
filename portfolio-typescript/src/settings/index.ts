@@ -13,5 +13,7 @@ export const Settings = {
     landing: `/mapsin/${MenuTypes.landing}`,
     signin: `/mapsin/${MenuTypes.signin}`,
     signup: `/mapsin/${MenuTypes.signup}`,
+    survey: `/mapsin/${MenuTypes.survey}`,
+    result: `/mapsin/${MenuTypes.result}`,
   }
 }

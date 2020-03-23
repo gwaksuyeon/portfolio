@@ -1,0 +1,137 @@
+@import 'styles/root.scss';
+
+#survey-wrap {
+  height: 100%;
+
+  header {
+    @include flexRow();
+    align-items: center;
+    height: 50px;
+    background: $primary;
+    padding: 0 10px;
+
+    ._logo {
+      svg {
+        height: 40px;
+      }
+    }
+
+    button {
+      min-width: initial;
+      background: transparent;
+      box-shadow: none;
+      color: #fff;
+      padding: 4px 8px;
+      margin-left: auto;
+    }
+  }
+
+  main {
+    @include flexColumn();
+    position: relative;
+    height: calc(100% - 50px);
+
+    .bg {
+      position: absolute;
+      width: 100%; height: 300px;
+      background-color: $primary;
+      z-index: -1;
+    }
+
+    .contentsWrap {
+      @include flexColumn();
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, .25);
+      margin: 10px;
+      padding: 10px;
+
+      // 진행바
+      .progressBarWrap {
+        @include flexRow();
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        width: 60%; height: 5px;
+        background: $gray5;
+        .currentBar {
+          width: calc(100% / 10 * 1);
+          height: 8px;
+          background: $primary;
+          z-index: 2;
+          transition: .25s;
+        }
+      }
+
+      // 좌우버튼
+      .prevBtn, .nextBtn, .completeBtn {
+        position: absolute;
+        top: 50%; transform: translateY(-50%);
+        background: $primary;
+        svg {
+          width: 12px;
+          fill: #fff;
+        }
+      }
+
+      .prevBtn {
+        left: 60px;
+      }
+
+      .nextBtn, .completeBtn {
+        right: 60px;
+      }
+
+      // 내용
+      .contents {
+        @include flexRow();
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        .textWrap {
+          @include flexColumn();
+          margin-right: 120px;
+
+          .manufacturer {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          .name {
+            font-size: 40px;
+          }
+
+          .evaluationWrap {
+            @include flexRow();
+  
+            svg {
+              width: 40px;
+              margin: 32px 0 20px;
+            }
+          }
+  
+          .notSelectBtn {
+            min-width: initial;
+            background: $primary;
+            color: #fff;
+            box-shadow: none;
+            padding: 4px 8px;
+          }
+        }
+
+        // img
+        .imgWrap {
+          width: 400px;
+          height: 400px;
+
+          img {
+            width: 100%; height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

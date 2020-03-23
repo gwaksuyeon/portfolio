@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import { Button, ThemeProvider, TextField } from '@material-ui/core';
+import { ThemeProvider, TextField } from '@material-ui/core';
 import './signin.scss';
 
 import { Settings } from 'settings';
 import { Theme } from 'settings/material';
 
 import LinkToBtnContainer from 'container/signin/LinkToBtn';
+import FormSubmitBtnContainer from 'container/signin/FormSubmitBtn';
 
 import LogoSloganIcon from 'component/icons/logoSlogan'
 import ArrowLeftIcon from 'component/icons/arrowLeft';
@@ -46,12 +47,7 @@ const Signin = () => {
                 size="small"
                 required
               />
-              <Button 
-                variant="contained"
-                type="submit"
-              >
-                Login
-              </Button>
+              <FormSubmitBtnContainer/>
             </ThemeProvider>
           </form>
           <p className="forgotPassword">
