@@ -14,5 +14,6 @@ export const Settings = {
     signin: `/mapsin/${MenuTypes.signin}`,
     signup: `/mapsin/${MenuTypes.signup}`,
     survey: `/mapsin/${MenuTypes.survey}`,
+    result: `/mapsin/${MenuTypes.result}`,
   }
 }
