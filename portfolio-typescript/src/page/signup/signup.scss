@@ -62,6 +62,10 @@
           border-radius: 0;
         }
 
+        .MuiInputBase-input {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
         .row {
           @include flexRow();
           margin-bottom: 12px;
