@@ -4,7 +4,7 @@ import App from './App';
 
 const Root = () => {
   return (
-    <BrowserRouter basename="/planet">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App/>
     </BrowserRouter>
   )
