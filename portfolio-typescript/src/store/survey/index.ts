@@ -16,6 +16,8 @@ export const ActionTypes = {
   CAHGNE_CURRENT_VALUE: `${prefix}/CAHGNE_CURRENT_VALUE`,
   // 전체 점수 계산
   CAHNGE_TOTAL_SCORE: `${prefix}/CAHNGE_TOTAL_SCORE`,
+  // 등급 계산
+  GET_CALC_RANK: `${prefix}/GET_CALC_RANK`,
 
   // 데이터
   TRY_FETCH_LIST: `${prefix}/TRY_FETCH_LIST`,
@@ -40,7 +42,11 @@ export const ActionCtor = {
   },
   // 전체 점수 계산
   onChangeTotalScore: (currentIndex: number, currentValue: number) => {
-    return {type: ActionTypes.CAHNGE_TOTAL_SCORE, payload: {currentIndex, currentValue}}
+    return {type: ActionTypes.CAHNGE_TOTAL_SCORE, payload: {currentIndex, currentValue}};
+  },
+  // 등급 계산
+  onGetCalcRank: (rank: number) => {
+    return {type: ActionTypes.GET_CALC_RANK, payload: rank};
   },
 
   // 데이터
@@ -72,10 +78,10 @@ function* FetchListAsync() {
 interface IState {
   currentIndex: number;
   currentValue: number;
-  prevValue: number;
 
   saveScore: List<number>;
   totalCount: number;
+  rank: number;
 
   listType: string;
   list: List<DetailState>;
@@ -83,7 +89,7 @@ interface IState {
 const StateRecord = Record<IState>({
   currentIndex: 0,
   currentValue: 0,
-  prevValue: 0,
+  rank: 0,
 
   saveScore: List([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]),
   totalCount: 0,
@@ -104,7 +110,6 @@ export default handleActions<State, any>({
   // 다음버튼
   [ActionTypes.CHANGE_NEXT_BUTTON]: (state) => {
     return state
-      .setIn(['saveScore', state.currentIndex], state.currentValue)
       .update('currentIndex', currentIndex => currentIndex >= 9 ? 9 : currentIndex + 1);
   },
 
@@ -112,6 +117,16 @@ export default handleActions<State, any>({
   [ActionTypes.CAHGNE_CURRENT_VALUE]: (state, action) => {
     return state
       .set('currentValue', action.payload);
+  },
+  // 전체 점수 계산
+  [ActionTypes.CAHNGE_TOTAL_SCORE]: (state, action) => {
+    return state
+      .setIn(['saveScore', action.payload.currentIndex], action.payload.currentValue);
+  },
+  // 등급 계산
+  [ActionTypes.GET_CALC_RANK]: (state, action) => {
+    return state
+      .set('rank', action.payload);
   },
 
   // 리스트

@@ -17,7 +17,6 @@ interface IProps {
   currentIndex: number;
   currentValue: number;
   list: List<DetailState>;
-  test: List<number>;
 
   fetchList: typeof ActionCtor.fetchList;
   onChangeCurrentValue: typeof ActionCtor.onChangeCurrentValue;
@@ -33,10 +32,14 @@ class ListContainer extends React.Component<IProps> {
     await this.props.fetchList();
   }
 
+  // 현재 매움 값
   onChangeValue = (e: any) => {
-    this.props.onChangeCurrentValue(Number(e.currentTarget.value));
+    const rank = Number(e.currentTarget.value);
+
+    this.props.onChangeCurrentValue(rank);
   }
 
+  // 먹어본적 없을때의 매움 값
   onClickNotSelect = () => {
     this.props.onChangeCurrentValue(0);
   }
@@ -85,7 +88,6 @@ export default connect(
   (state: IStoreState) => ({
     currentIndex: state.SurveyReducer.get('currentIndex'),
     currentValue: state.SurveyReducer.get('currentValue'),
-    test: state.SurveyReducer.get('saveScore'),
     list: state.SurveyReducer.get('list'),
   }),
   dispatch => bindActionCreators({
