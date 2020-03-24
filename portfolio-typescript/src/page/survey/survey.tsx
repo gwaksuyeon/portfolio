@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 import './survey.scss';
 
 import LogoutBtnContainer from 'container/survey/LogoutBtn';
