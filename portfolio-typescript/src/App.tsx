@@ -7,6 +7,7 @@ import Landing from 'page/landing';
 import Signin from 'page/signin';
 import Signup from 'page/signup';
 import Survey from 'page/survey';
+import Result from 'page/result';
 
 class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
         <Route exact={true} path={Settings.mapsin.signin} component={Signin}/>
         <Route exact={true} path={Settings.mapsin.signup} component={Signup} />
         <Route exact={true} path={Settings.mapsin.survey} component={Survey} />
+        <Route exact={true} path={Settings.mapsin.result} component={Result} />
       </div>
     )
   }
