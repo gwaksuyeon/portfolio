@@ -8,6 +8,7 @@ import NextBtnContainer from 'container/survey/NextBtn';
 import ListContainer from 'container/survey/List';
 
 import LogoWhiteIcon from 'component/icons/logoWhite';
+import ChillIcon from 'component/icons/chillFill';
 
 const Survey = () => {
   return (
@@ -24,6 +25,25 @@ const Survey = () => {
         <div className="contentsWrap">
           <div className="progressBarWrap">
             <ProgressBarContainer />
+          </div>
+          <div className="guide">
+            <p>
+              <span>
+                <ChillIcon/>&nbsp;:&nbsp;아주맵지않음
+              </span>
+              <span>
+                <ChillIcon/><ChillIcon/>&nbsp;:&nbsp;조금맵지않음
+              </span>
+              <span>
+                <ChillIcon/><ChillIcon/><ChillIcon/>&nbsp;:&nbsp;보통
+              </span>
+              <span>
+                <ChillIcon/><ChillIcon/><ChillIcon/><ChillIcon/>&nbsp;:&nbsp;조금매움
+              </span>
+              <span>
+                <ChillIcon/><ChillIcon/><ChillIcon/><ChillIcon/><ChillIcon/>&nbsp;:&nbsp;아주매움
+              </span>
+            </p>
           </div>
 
             <PrevBtnContainer />
