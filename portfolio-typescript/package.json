@@ -34,7 +34,8 @@
     "start": "cross-env NODE_PATH=src react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,6 +53,8 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
-  }
+    "cross-env": "^7.0.2",
+    "gh-pages": "^2.2.0"
+  },
+  "homepage": "https://gwaksuyeon.github.io/portfolio/"
 }
