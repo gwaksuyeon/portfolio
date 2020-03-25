@@ -6,29 +6,69 @@ import { Button, FormControl, InputLabel, MenuItem, Select, ThemeProvider, TextF
 
 import { IStoreState } from 'store/state';
 import { ActionCtor, GenderType } from 'store/signup';
+import { UserState } from 'store/signup/user.detail';
 import { Settings } from 'settings';
 import { Theme } from 'settings/material';
 
 interface IProps extends RouteComponentProps {
+  id: string;
+  password: string;
+  passwordCheck: string;
   gender: GenderType;
+  age: string;
 
+  onChangeId: typeof ActionCtor.onChangeId;
+  onChangePassword: typeof ActionCtor.onChangePassword;
+  onChangePasswordCheck: typeof ActionCtor.onChangePasswordCheck;
   onChangeGender: typeof ActionCtor.onChangeGender;
+  onChangeAge: typeof ActionCtor.onChangeAge;
+
+  createUser: typeof ActionCtor.createUser;
 }
 
 class FormContainer extends React.Component<IProps> {
 
-  onClickGender = (e: React.MouseEvent) => {
-    const dataType = e.currentTarget.getAttribute('data-type') as GenderType;
-    this.props.onChangeGender(dataType)
+  onChangeId = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.currentTarget.value;
+    this.props.onChangeId(value);
   }
 
-  onClickSubmit = (e: React.FormEvent) => {
+  onChangePassword = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.currentTarget.value;
+    this.props.onChangePassword(value);
+  }
+
+  onChangePasswordCheck = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.currentTarget.value;
+    this.props.onChangePasswordCheck(value);
+  }
+
+  onClickGender = (e: React.MouseEvent) => {
+    const dataType = e.currentTarget.getAttribute('data-type') as GenderType;
+    this.props.onChangeGender(dataType);
+  }
+
+  onChangeAge = (e: React.ChangeEvent<{value: unknown}>) => {
+    const age = e.target.value as string;
+    this.props.onChangeAge(age);
+  }
+
+  onClickSubmit = async (e: React.FormEvent) => {
+    const { id, password, gender, age } = this.props;
+
     e.preventDefault();
+    const userInfo =  {
+      id: id,
+      password: password,
+      gender: gender,
+      age: age
+    } as UserState;
+    this.props.createUser(userInfo);
     this.props.history.push(Settings.mapsin.signin);
   }
 
   render() {
-    const { gender } = this.props;
+    const { password, passwordCheck, gender, age } = this.props;
 
     return (
       <form onSubmit={this.onClickSubmit}>
@@ -40,6 +80,7 @@ class FormContainer extends React.Component<IProps> {
             type="text"
             size="small"
             required
+            onChange={this.onChangeId}
           />
           <TextField
             className="password"
@@ -48,14 +89,16 @@ class FormContainer extends React.Component<IProps> {
             type="password"
             size="small"
             required
+            onChange={this.onChangePassword}
           />
           <TextField
-            className="passwordCheck"
+            className={`passwordCheck ${passwordCheck !== password ? 'notCoincide' : ''}`}
             variant="outlined"
             label="비밀번호 확인"
             type="password"
             size="small"
             required
+            onChange={this.onChangePasswordCheck}
           />
 
           <div className="row">
@@ -81,8 +124,10 @@ class FormContainer extends React.Component<IProps> {
               <Select
                 labelId="select-age"
                 className="selectAge"
+                value={age}
                 label="연령대"
                 required
+                onChange={this.onChangeAge}
               >
                 <MenuItem value={"tenUnder"}>10대이하</MenuItem>
                 <MenuItem value={"ten"}>10대</MenuItem>
@@ -109,9 +154,19 @@ class FormContainer extends React.Component<IProps> {
 
 export default connect(
   (state: IStoreState) => ({
+    id: state.SignupReducer.get('id'),
+    password: state.SignupReducer.get('password'),
+    passwordCheck: state.SignupReducer.get('passwordCheck'),
     gender: state.SignupReducer.get('gender'),
+    age: state.SignupReducer.get('age'),
   }),
   dispatch => bindActionCreators({
+    onChangeId: ActionCtor.onChangeId,
+    onChangePassword: ActionCtor.onChangePassword,
+    onChangePasswordCheck: ActionCtor.onChangePasswordCheck,
     onChangeGender: ActionCtor.onChangeGender,
+    onChangeAge: ActionCtor.onChangeAge,
+
+    createUser: ActionCtor.createUser,
   }, dispatch)
 )(withRouter(FormContainer));
