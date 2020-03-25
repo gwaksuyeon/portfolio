@@ -66,6 +66,14 @@
           font-family: Arial, Helvetica, sans-serif;
         }
 
+        .passwordCheck {
+          &.notCoincide {
+            input { 
+              color: $primary;
+            }
+          }
+        }
+
         .row {
           @include flexRow();
           margin-bottom: 12px;
