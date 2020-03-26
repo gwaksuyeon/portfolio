@@ -137,6 +137,11 @@ export default handleActions<State, any>({
   [ActionTypes.SUCCESS_FETCH_LIST]: (state, action) => {
     return state
       .set('listType', action.type)
+      .set('currentIndex', 0)
+      .set('currentValue', 0)
+      .set('rank', 0)
+      .set('saveScore', List([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]))
+      .set('totalCount', 0)
       .set('list', action.payload);
   },
   [ActionTypes.FAILURE_FETCH_LIST]: (state, action) => {
