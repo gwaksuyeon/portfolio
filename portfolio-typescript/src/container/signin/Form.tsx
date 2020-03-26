@@ -39,13 +39,13 @@ class FormContainer extends React.Component<IProps> {
     const { id, password } = this.props;
 
     e.preventDefault();
+    const userInfo = JSON.parse(localStorage.user);
+    const findUserInfo = userInfo.filter((obj: { id: string; password: string; }) => obj.id === id && obj.password === password);
 
-    console.log(JSON.parse(localStorage.user).id)
-
-    if (JSON.parse(localStorage.user).indexOf(id) !== -1 && JSON.parse(localStorage.user).indexOf(password) !== -1) {
-      this.props.history.push(Settings.mapsin.survey);
+    if (findUserInfo.length === 0) {
+      window.alert('정보가 일치하지 않습니다. 다시입력하거나 회원가입을 해주세요');
     } else {
-      window.alert('회원이 아니거나 정보가 틀렸습니다')
+      this.props.history.push(Settings.mapsin.survey);
     }
   }
 
