@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cd5309facff84dc6e9a652389d740f5c",
+    "revision": "e1dd341b1562b3d20a3cc3ec9c383756",
     "url": "/project-mabsin_renewal/index.html"
   },
   {
-    "revision": "7ee0c5068868661fbc46",
-    "url": "/project-mabsin_renewal/static/css/main.2707157c.chunk.css"
+    "revision": "1125b7d00b0a7220feb3",
+    "url": "/project-mabsin_renewal/static/css/main.d570b486.chunk.css"
   },
   {
-    "revision": "53250ab21432fe5c004b",
-    "url": "/project-mabsin_renewal/static/js/2.4bbbe622.chunk.js"
+    "revision": "0e7b03be7952286597f5",
+    "url": "/project-mabsin_renewal/static/js/2.13df1e6b.chunk.js"
   },
   {
-    "revision": "68f59c7eb402610e2118ba5a68844a1e",
-    "url": "/project-mabsin_renewal/static/js/2.4bbbe622.chunk.js.LICENSE.txt"
+    "revision": "0749163b59fbee32225059cb60c18af6",
+    "url": "/project-mabsin_renewal/static/js/2.13df1e6b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7ee0c5068868661fbc46",
-    "url": "/project-mabsin_renewal/static/js/main.22d55986.chunk.js"
+    "revision": "1125b7d00b0a7220feb3",
+    "url": "/project-mabsin_renewal/static/js/main.bc625221.chunk.js"
   },
   {
-    "revision": "4f3d343dc479bcbded74",
-    "url": "/project-mabsin_renewal/static/js/runtime-main.6bebe3cf.js"
+    "revision": "edd896f19bc35c39eb22",
+    "url": "/project-mabsin_renewal/static/js/runtime-main.26e11b37.js"
   },
   {
     "revision": "708af45078cd45c8e1c1ff240155d46f",

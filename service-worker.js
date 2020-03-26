@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/project-mabsin_renewal/precache-manifest.995dd01beb21275862061e88225fa9ff.js"
+  "/project-mabsin_renewal/precache-manifest.f13b26f45be1688c386d5f6dd65add74.js"
 );
 
 self.addEventListener('message', (event) => {
