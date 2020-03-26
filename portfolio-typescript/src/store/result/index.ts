@@ -56,9 +56,15 @@ function* FetchListAsync(action: Action<number>) {
 
     yield delay(100);
     const rank = action.payload;
-    const response = Data.filter(obj => obj.evaluation === rank);
 
-    yield put({type: ActionTypes.SUCCESS_FETCH_LIST, payload: fromJS(response)});
+    if (rank === 0) {
+      const response = [...Data];
+      yield put({type: ActionTypes.SUCCESS_FETCH_LIST, payload: fromJS(response)})
+    } else {
+      const response = Data.filter(obj => obj.evaluation === rank);
+      yield put({type: ActionTypes.SUCCESS_FETCH_LIST, payload: fromJS(response)});
+    }
+
   } catch (error) {
     yield put({type: ActionTypes.FAILURE_FETCH_LIST, payload: error});
   }

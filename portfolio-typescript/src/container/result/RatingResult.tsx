@@ -10,6 +10,24 @@ interface IProps {
 const RatingResultContainer = ({
   rank,
 }: IProps) => {
+
+  if ( rank === 0) {
+    return (
+      <>
+        <div className="imgWrap">
+          <img src={require('assets/img/haekbuldark.png')} alt="핵불닭볶음면"/>
+        </div>
+        <div className="textWrap">
+          <p className="title">
+            당신의 맵기는<br/>
+          <span className="bold">{rank}등급</span>입니다.
+          </p>
+          <p className="subText">매운음식에 도전해보세요</p>
+        </div>
+      </>
+    )
+  }
+
   if (rank === 1) {
     return (
       <>

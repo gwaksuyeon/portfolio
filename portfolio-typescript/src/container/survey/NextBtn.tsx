@@ -51,9 +51,12 @@ class NextBtnContainer extends React.Component<IProps> {
       return sumRes + sumObj;
     });
     // 접수 합 / 항목
-    const rank = Math.round(sumScore / count);
-
-    this.props.onGetCalcRank(rank);
+    if (sumScore === 0) {
+      this.props.onGetCalcRank(0);
+    } else {
+      const rank = Math.round(sumScore / count);
+      this.props.onGetCalcRank(rank);
+    }
   }
 
   render() {
