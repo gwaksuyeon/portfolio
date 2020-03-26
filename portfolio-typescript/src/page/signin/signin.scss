@@ -56,10 +56,15 @@
         .MuiOutlinedInput-root {
           border-radius: 0;
         }
+        
+        .MuiInputBase-input {
+          font-family: Arial, Helvetica, sans-serif;
+        }
 
         .password {
           margin: 12px 0 20px 0;
         }
+        
 
         button {
           min-width: initial;

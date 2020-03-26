@@ -21,7 +21,12 @@ class RankFilterContainer extends React.Component<IProps> {
 
   componentDidMount() {
     const { rank } = this.props;
-    this.props.onChangeRankFilter(`${rank}등급`);
+
+    if (rank === 0) {
+      this.props.onChangeRankFilter('전체');
+    } else {
+      this.props.onChangeRankFilter(`${rank}등급`);
+    }
   }
 
   componentDidUpdate() {
@@ -30,9 +35,13 @@ class RankFilterContainer extends React.Component<IProps> {
 
   fetchList = async () => {
     const { rankLabel } = this.props;
-    const rank = Number(rankLabel.split('등급')[0]);
 
-    await this.props.fetchList(rank);
+    if (rankLabel === '전체') {
+      await this.props.fetchList(0);
+    } else {
+      const rank = Number(rankLabel.split('등급')[0]);
+      await this.props.fetchList(rank);
+    }
   }
 
   // rank filter toggle

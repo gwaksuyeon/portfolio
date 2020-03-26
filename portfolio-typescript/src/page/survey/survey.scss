@@ -67,6 +67,23 @@
         }
       }
 
+      // 가이드
+      .guide {
+        position: absolute;
+        top: 70px;
+        p {
+          @include flexRow();
+          span {
+            @include flexRow();
+            align-items: center;
+            margin-left: 24px;
+            svg {
+              width: 16px;
+            }
+          }
+        }
+      }
+
       // 좌우버튼
       .prevBtn, .nextBtn, .completeBtn {
         position: absolute;
