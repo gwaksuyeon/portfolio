@@ -3,4 +3,4 @@
 - React, Typescript, Redux, Sass 사용
 
 ## 배포주소
-https://gwaksuyeon.github.io/portfolio
+https://gwaksuyeon.github.io/project-mapsin/
