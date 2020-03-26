@@ -3,6 +3,7 @@ import './result.scss';
 
 import LogoutBtnContainer from 'container/result/LogoutBtn';
 import RatingResultContainer from 'container/result/RatingResult';
+import ResurveyBtnContainer from 'container/result/ResurveyBtn';
 import RankFilterContainer from 'container/result/RankFilter';
 import ListContainer from 'container/result/List';
 
@@ -25,6 +26,7 @@ const Result = () => {
 
         <div className="filterWrap">
           <RankFilterContainer />
+          <ResurveyBtnContainer />
         </div>
 
         <div className="contentWrap">
