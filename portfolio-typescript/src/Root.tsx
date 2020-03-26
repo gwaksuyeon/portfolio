@@ -4,7 +4,7 @@ import App from './App';
 
 const Root = () => {
   return (
-    <BrowserRouter basename={"/portfolio"}>
+    <BrowserRouter basename={"/project-mabsin_renewal"}>
       <App/>
     </BrowserRouter>
   )
