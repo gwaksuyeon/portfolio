@@ -12,7 +12,7 @@ export enum GenderType {
 
 const prefix = 'mapsin/signup';
 export const ActionTypes = {
-  CAHNGE_ID: `${prefix}/CAHNGE_ID`,
+  CHANGE_ID: `${prefix}/CHANGE_ID`,
   CHANGE_PASSWORD: `${prefix}/CHANGE_PASSWORD`,
   CHANGE_PASSWORD_CHECK: `${prefix}/CHANGE_PASSWORD_CHECK`,
   CHANGE_GENDER: `${prefix}/CHANGE_GENDER`,
@@ -26,7 +26,7 @@ export const ActionTypes = {
 
 export const ActionCtor = {
   onChangeId: (id: string) => {
-    return {type: ActionTypes.CAHNGE_ID, payload: id};
+    return {type: ActionTypes.CHANGE_ID, payload: id};
   },
   onChangePassword: (password: string) => {
     return {type: ActionTypes.CHANGE_PASSWORD, payload: password};
@@ -93,7 +93,7 @@ const initSate = new State();
 
 export default handleActions<State, any>({
   // 아이디
-  [ActionTypes.CAHNGE_ID]: (state, action) => {
+  [ActionTypes.CHANGE_ID]: (state, action) => {
     return state
       .set('id', action.payload);
   },
