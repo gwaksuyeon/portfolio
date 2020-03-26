@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { IStoreState } from 'store/state';
+import WarningIcon from 'component/icons/warning';
 
 interface IProps {
   rank: number;
@@ -14,8 +15,8 @@ const RatingResultContainer = ({
   if ( rank === 0) {
     return (
       <>
-        <div className="imgWrap">
-          <img src={require('assets/img/haekbuldark.png')} alt="핵불닭볶음면"/>
+        <div className="svgWrap">
+          <WarningIcon />
         </div>
         <div className="textWrap">
           <p className="title">
